@@ -49,11 +49,13 @@ class SinglyLinkedList {
     }
 
     removeFromHead() {
+
         // Remove node at head
 
         // Your code here
 
         // Write your hypothesis on the time complexity of this method here
+        
     }
 
     removeFromTail() {
