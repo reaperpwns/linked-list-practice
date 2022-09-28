@@ -49,21 +49,28 @@ class SinglyLinkedList {
     }
 
     removeFromHead() {
-
-        // Remove node at head
-
-        // Your code here
-
-        // Write your hypothesis on the time complexity of this method here
-
+        if (!this.head) return undefined;
+        let orgHead = this.head;
+        this.head = orgHead.next;
+        this.length--;
+        return orgHead;
     }
 
     removeFromTail() {
-        // Remove node at tail
-
-        // Your code here
-
-        // Write your hypothesis on the time complexity of this method here
+        if (!this.head) return undefined;
+        let curr = this.head;
+        let prev;
+        while (curr.next) {
+            prev = curr;
+            curr = curr.next;
+        }
+        if (!prev) {
+            this.head = null;
+        } else {
+            prev.next = null;
+        }
+        this.length--;
+        return curr;
     }
 
     peekAtHead() {
