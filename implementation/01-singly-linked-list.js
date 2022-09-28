@@ -13,41 +13,49 @@ class SinglyLinkedList {
     }
 
     addToHead(val) {
-        // Add node of val to head of linked list
+        const newNode = new SinglyLinkedNode(val)
 
-        // Your code here
+        newNode.next = this.head
+        this.head = newNode
 
-        // Write your hypothesis on the time complexity of this method here
+        this.length++
+
+        return this
+
     }
 
     addToTail(val) {
         // There are bugs in this method! Fix them!!!
 
         // Add node of val to tail of linked list
-        let newNode = new SinglyLinkedNode(data);
+        let newNode = new SinglyLinkedNode(val);
 
-        if (!head) {
-            head = newNode;
-            return head;
+        this.length++
+        if (!this.head) {
+            this.head = newNode;
+            return this;
         }
 
-        let curr = head;
-        while (curr) {
-            curr = current.next;
+        let curr = this.head;
+        while (curr.next) {
+            curr = curr.next;
         }
         curr.next = newNode;
 
-        return head;
+
+        return this;
 
         // Write your hypothesis on the time complexity of this method here
     }
 
     removeFromHead() {
+
         // Remove node at head
 
         // Your code here
 
         // Write your hypothesis on the time complexity of this method here
+        
     }
 
     removeFromTail() {
