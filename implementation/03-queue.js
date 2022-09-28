@@ -9,11 +9,16 @@ class Queue {
     }
 
     enqueue(val) {
-        // Add node to end of queue (linked list)
-
-        // Your code here
-
-        // Write your hypothesis on the time complexity of this method here
+        const newNode = new SinglyLinkedNode(val);
+        this.length++;
+        if (!this.head) {
+            this.head = newNode
+            this.tail = newNode
+        } else {
+            this.tail.next = newNode
+            this.tail = newNode
+        }
+        return this.length;
     }
 
     dequeue() {
