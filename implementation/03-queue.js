@@ -22,11 +22,20 @@ class Queue {
     }
 
     dequeue() {
-        // Remove node from front of queue (linked list)
 
-        // Your code here
+        if (!this.head) return null
 
-        // Write your hypothesis on the time complexity of this method here
+        let curr = this.head; //storing the value of original head
+        this.head = curr.next
+
+        if (!this.head) {
+            this.tail = null
+        }
+
+        this.length--
+
+        return curr.value
+
     }
 
 }
