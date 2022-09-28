@@ -74,19 +74,20 @@ class SinglyLinkedList {
     }
 
     peekAtHead() {
-        // Return value of head node
+      if(!this.head) return undefined
 
-        // Your code here
-
-        // Write your hypothesis on the time complexity of this method here
+      return this.head.value
     }
 
     print() {
-        // Print out the linked list
+        if(!this.head) return
 
-        // Your code here
+        let curr = this.head
 
-        // Write your hypothesis on the time complexity of this method here
+        while(curr) {
+            console.log(curr.value)
+            curr = curr.next
+        }
     }
 }
 
