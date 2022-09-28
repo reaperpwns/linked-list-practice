@@ -35,15 +35,38 @@ class DoublyLinkedList {
     }
 
     addToTail(val) {
+        let newNode = new DoublyLinkedNode(val)
+
+        this.length++
+        if(!this.head){
+            this.head = newNode
+            this.tail = newNode
+            return this;
+        }
+
+        if(this.tail){
+            this.tail.next = newNode
+            newNode.prev = this.tail
+            this.tail = newNode
+            return this;
+        }
 
     }
 
     removeFromHead() {
-        // Remove node at head
+        if(!this.head) return undefined
 
-        // Your code here
+        let curr = this.head; //storing the value of original head
 
-        // Write your hypothesis on the time complexity of this method here
+        this.head = curr.next
+
+       if(this.head){
+        this.head.prev = null
+       }
+
+        this.length--
+
+        return curr.value
     }
 
     removeFromTail() {
