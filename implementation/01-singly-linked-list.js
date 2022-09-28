@@ -50,7 +50,7 @@ class SinglyLinkedList {
 
     removeFromHead() {
 
-        // Remove node at hea
+        // Remove node at head
 
         // Your code here
 
